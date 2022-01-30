@@ -1,0 +1,39 @@
+MainWidget:
+
+<MainWidget>:
+    BoxLayout:
+        size: root.size
+        BoxLayout:
+            orientation: "vertical"
+            GridLayout:
+                size_hint: (1, 0.3)
+                cols: 3
+                Button:
+                    text: "Загрузить"
+                Button:
+                    text: "Слить"
+                Button:
+                    text: "Инфо"
+            GridLayout:
+                size_hint: (1, 0.7)
+                cols: 4
+                ToggleButton:
+                    id: 1
+                    text: "поз. 1"
+                ToggleButton:
+                    text: "поз. 2"
+                ToggleButton:
+                    text: "поз. 3"
+                ToggleButton:
+                    text: "поз. 4"
+                ToggleButton:
+                    text: "поз. 5"
+                ToggleButton:
+                    text: "поз. 6"
+                ToggleButton:
+                    text: "поз. 7"
+                ToggleButton:
+                    text: "поз. 8"
+
+        BoxLayout:
+            Widget:
