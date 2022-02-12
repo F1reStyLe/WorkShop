@@ -14,9 +14,11 @@ MainWidget:
                     disabled: not root.state
                 Button:
                     text: "Слить"
+                    on_press: root.unload_reactor()
                     disabled: not root.state
                 Button:
                     text: "Инфо"
+                    on_press: root.show_info()
                     disabled: not root.state
             GridLayout:
                 size_hint: (1, 0.7)
@@ -47,5 +49,15 @@ MainWidget:
                     text: "поз. 8"
 
         BoxLayout:
+            orientation: 'vertical'
+            Spinner:
+                id: spinner
+                text: "Production"
+                values: root.production_dict['name']
+                on_text: root.spinner_clicked(self)
+                disabled: not root.state
+
             Label:
-                text: root.product
+                id: label_text
+                text: ''
+

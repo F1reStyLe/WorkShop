@@ -1,5 +1,5 @@
 from kivy.app import App
-from kivy.properties import BooleanProperty, StringProperty
+from kivy.properties import BooleanProperty, StringProperty, ObjectProperty
 from kivy.uix.boxlayout import BoxLayout
 
 from models import Reactor
@@ -28,11 +28,35 @@ class MainWidget(BoxLayout):
                     self.product = str(reactor.show_info())
 
     def load_reactor(self):
-        self.reactor_now.product = 'PD-100'
+        self.reactor_now.product = self.product
+        self.state = False
+
+    def unload_reactor(self):
+        self.reactor_now.product = ''
         self.product = str(self.reactor_now.show_info())
         self.state = False
 
+    def show_info(self):
+        self.ids.label_text.text = str(self.reactor_now.show_info())
+        self.state = False
 
+    def spinner_clicked(self,widget):
+        self.product = widget.text
+
+
+
+
+    production_dict = {
+        'name' : {
+        'ПД-100Н':'',
+        'ИН-200М':'',
+        'Х-400':'',
+        'Х-230':'',
+        'ПА-600':'',
+        'ПА-600Н':'',
+        'БР-280':'',
+    }
+    }
 
 
 

@@ -2,7 +2,7 @@
 
 class Reactor:
     name = ''
-    product = ''
+    product = '111'
     volume = 0
     empty = True
 
@@ -15,3 +15,4 @@ class Reactor:
 
     def load(self, product):
         self.product = product
+
