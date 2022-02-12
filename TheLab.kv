@@ -10,36 +10,40 @@ MainWidget:
                 cols: 3
                 Button:
                     text: "Загрузить"
+                    on_press: root.load_reactor()
+                    disabled: not root.state
                 Button:
                     text: "Слить"
+                    disabled: not root.state
                 Button:
                     text: "Инфо"
+                    disabled: not root.state
             GridLayout:
                 size_hint: (1, 0.7)
                 cols: 4
-                ToggleButton:
+                Button:
                     text: root.reactors[0].name
-                    on_state: root.toggle_button(self)
-                    disabled: root.toggle_state
-                ToggleButton:
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
+                Button:
                     text: root.reactors[1].name
-                    on_state: root.toggle_button(self)
-                    disabled: root.toggle_state
-                ToggleButton:
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
+                Button:
                     text: root.reactors[2].name
-                    on_state: root.toggle_button(self)
-                    disabled: root.toggle_state
-                ToggleButton:
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
+                Button:
                     text: root.reactors[3].name
-                    on_state: root.toggle_button(self)
-                    disabled: root.toggle_state
-                ToggleButton:
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
+                Button:
                     text: "поз. 5"
-                ToggleButton:
+                Button:
                     text: "поз. 6"
-                ToggleButton:
+                Button:
                     text: "поз. 7"
-                ToggleButton:
+                Button:
                     text: "поз. 8"
 
         BoxLayout:

@@ -8,8 +8,9 @@ from models import Reactor
 
 
 class MainWidget(BoxLayout):
-    toggle_state = BooleanProperty(False)
+    state = BooleanProperty(False)
     product = StringProperty('')
+    reactor_now = object
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.reactors = [
@@ -20,11 +21,20 @@ class MainWidget(BoxLayout):
         ]
     def toggle_button(self,widget):
         if widget.state == 'down':
+            self.state = True
             for reactor in self.reactors:
                 if reactor.name == widget.text:
+                    self.reactor_now = reactor
                     self.product = str(reactor.show_info())
-        else:
-            self.product == ''
+
+    def load_reactor(self):
+        self.reactor_now.product = 'PD-100'
+        self.product = str(self.reactor_now.show_info())
+        self.state = False
+
+
+
+
 
 
 class TheLabApp(App):
