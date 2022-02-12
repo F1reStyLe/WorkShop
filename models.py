@@ -6,8 +6,12 @@ class Reactor:
     volume = 0
     empty = True
 
-    def __init__(self, name, products, volume, empty):
+    def __init__(self, name, volume):
         self.name = name
-        self.product = product
         self.volume = volume
-        self.empty = empty
+
+    def show_info(self):
+        return self.name, self.product, self.volume
+
+    def load(self, product):
+        self.product = product

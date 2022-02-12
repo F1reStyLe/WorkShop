@@ -18,14 +18,21 @@ MainWidget:
                 size_hint: (1, 0.7)
                 cols: 4
                 ToggleButton:
-                    id: 1
-                    text: "поз. 1"
+                    text: root.reactors[0].name
+                    on_state: root.toggle_button(self)
+                    disabled: root.toggle_state
                 ToggleButton:
-                    text: "поз. 2"
+                    text: root.reactors[1].name
+                    on_state: root.toggle_button(self)
+                    disabled: root.toggle_state
                 ToggleButton:
-                    text: "поз. 3"
+                    text: root.reactors[2].name
+                    on_state: root.toggle_button(self)
+                    disabled: root.toggle_state
                 ToggleButton:
-                    text: "поз. 4"
+                    text: root.reactors[3].name
+                    on_state: root.toggle_button(self)
+                    disabled: root.toggle_state
                 ToggleButton:
                     text: "поз. 5"
                 ToggleButton:
@@ -36,4 +43,5 @@ MainWidget:
                     text: "поз. 8"
 
         BoxLayout:
-            Widget:
+            Label:
+                text: root.product
