@@ -2,7 +2,7 @@
 
 class Reactor:
     name = ''
-    product = '111'
+    product = ''
     volume = 0
     empty = True
 
@@ -11,7 +11,9 @@ class Reactor:
         self.volume = volume
 
     def show_info(self):
-        return self.name, self.product, self.volume
+        return (f'Номер реактора: {self.name} \n' 
+               f'Загружено: {self.product} \n'
+               f'Объем: {self.volume}')
 
     def load(self, product):
         self.product = product

@@ -4,8 +4,12 @@ MainWidget:
     BoxLayout:
         size: root.size
         BoxLayout:
+            spacing: 3
+            padding: 10
             orientation: "vertical"
             GridLayout:
+                spacing: 3
+                padding: 10
                 size_hint: (1, 0.3)
                 cols: 3
                 Button:
@@ -21,6 +25,8 @@ MainWidget:
                     on_press: root.show_info()
                     disabled: not root.state
             GridLayout:
+                spacing: 3
+                padding: 10
                 size_hint: (1, 0.7)
                 cols: 4
                 Button:
@@ -40,23 +46,34 @@ MainWidget:
                     on_press: root.toggle_button(self)
                     disabled: root.state
                 Button:
-                    text: "поз. 5"
+                    text: root.reactors[4].name
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
                 Button:
-                    text: "поз. 6"
+                    text: root.reactors[5].name
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
                 Button:
-                    text: "поз. 7"
+                    text: root.reactors[6].name
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
                 Button:
-                    text: "поз. 8"
+                    text: root.reactors[7].name
+                    on_press: root.toggle_button(self)
+                    disabled: root.state
 
         BoxLayout:
+            spacing: 3
+            padding: 10
             orientation: 'vertical'
             Spinner:
                 id: spinner
+                size: self.size
                 text: "Production"
                 values: root.production_dict['name']
                 on_text: root.spinner_clicked(self)
                 disabled: not root.state
-
+            Label:
             Label:
                 id: label_text
                 text: ''

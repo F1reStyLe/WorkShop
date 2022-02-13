@@ -18,6 +18,10 @@ class MainWidget(BoxLayout):
             Reactor("1.2", 5500),
             Reactor("1.3", 6000),
             Reactor("1.4", 6000),
+            Reactor("1.5", 4000),
+            Reactor("1.6", 6000),
+            Reactor("1.7", 5500),
+            Reactor("1.8", 5000),
         ]
     def toggle_button(self,widget):
         if widget.state == 'down':
@@ -32,7 +36,7 @@ class MainWidget(BoxLayout):
         self.state = False
 
     def unload_reactor(self):
-        self.reactor_now.product = ''
+        self.reactor_now.product = 'Пустой'
         self.product = str(self.reactor_now.show_info())
         self.state = False
 
